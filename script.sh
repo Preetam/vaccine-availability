@@ -35,8 +35,8 @@ done
 sqlite3 appointments.db 'CREATE TABLE appointments (location TEXT, date TEXT, time TEXT);'
 cat queries.txt | sqlite3 appointments.db
 
-echo "Available appointments:"
-
-sqlite3 -cmd '.width 40 0 0' -column -header appointments.db 'select location, date, count(*) as count from appointments group by 1, 2;' > README.md
-
+echo "# Available appointments:" > README.md
+echo '```' >> README.md
+sqlite3 -cmd '.width 40 0 0' -column appointments.db 'select location, date, count(*) as count from appointments group by 1, 2;' >> README.md
+echo '```' >> README.md
 rm appointments.db queries.txt
