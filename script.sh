@@ -22,6 +22,11 @@ LOCATIONS=(
     "Berger Auditorium"
 )
 
+curl -XPOST "https://api.github.com/repos/Preetam/vaccine-availability/issues" \
+	-H "Authorization: Bearer $GITHUB_TOKEN" \
+	-H "Content-Type: application/json" \
+	-d '{"title": "TEST", "body": "Test issue. Please ignore."}'
+
 rm -f appointments.db queries.txt
 
 for i in "${!PARAMS[@]}"; do 
