@@ -1,5 +1,5 @@
-location                                  date                   count     
-----------------------------------------  ---------------------  ----------
+# Available appointments:
+```
 Berger Auditorium                         Monday April 12, 2021  110       
 Berger Auditorium                         Tuesday April 13, 202  111       
 Emmanuel Baptist Church                   Tuesday April 13, 202  19        
@@ -15,3 +15,4 @@ Valley Health Center Tully                Monday April 12, 2021  87
 Valley Health Center Tully                Tuesday April 13, 202  88        
 Valley Specialty Center                   Monday April 12, 2021  51        
 Valley Specialty Center                   Tuesday April 13, 202  51        
+```
