@@ -22,8 +22,6 @@ LOCATIONS=(
     "Berger Auditorium"
 )
 
-rm -f appointments.db queries.txt
-
 for i in "${!PARAMS[@]}"; do 
   curl -s 'https://schedulecare.sccgov.org/MyChartPRD/OpenScheduling/OpenScheduling/GetOpeningsForProvider?noCache=0.07578891619903505' \
   -H "__RequestVerificationToken: $TOKEN" \
@@ -44,6 +42,8 @@ echo "# Available appointments starting April 15:" > README.md
 echo '```' >> README.md
 sqlite3 -cmd '.width 32 0 0' -column appointments.db 'select location, date, count(*) as count from appointments group by 1, 2;' >> README.md
 echo '```' >> README.md
+
+rm -f appointments.db queries.txt
 
 MESSAGE=$(cat README.md)
 PAYLOAD=$(jq -n --arg content "$MESSAGE" '{content: $content}')
