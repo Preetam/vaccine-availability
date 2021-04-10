@@ -29,5 +29,5 @@ jobs:
       - name: Run a one-line script
         run: sh script.sh
         env:
-          SECRET: ${{ secrets.SECRET }}
+          TOKEN: ${{ secrets.TOKEN }}
           COOKIE: ${{ secrets.COOKIE }}
