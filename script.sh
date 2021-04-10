@@ -40,3 +40,9 @@ echo '```' >> README.md
 sqlite3 -cmd '.width 40 0 0' -column appointments.db 'select location, date, count(*) as count from appointments group by 1, 2;' >> README.md
 echo '```' >> README.md
 rm appointments.db queries.txt
+
+MESSAGE=$(cat README.md)
+PAYLOAD=$(jq -n --arg content "$MESSAGE" '{content: $content}')
+curl -i -XPOST "$DISCORD_WEBHOOK" \
+-H "Content-Type: application/json" \
+-d "$PAYLOAD"
