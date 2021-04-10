@@ -28,14 +28,14 @@ for i in "${!PARAMS[@]}"; do
   curl -s 'https://schedulecare.sccgov.org/MyChartPRD/OpenScheduling/OpenScheduling/GetOpeningsForProvider?noCache=0.07578891619903505' \
   -H "__RequestVerificationToken: $TOKEN" \
   -H "Cookie: $COOKIE" \
-  --data-raw "${PARAMS[$i]}&view=grouped&start=2021-04-12" \
+  --data-raw "${PARAMS[$i]}&view=grouped&start=2021-04-15" \
   | jq -cr --arg location "${LOCATIONS[$i]}" ".AllDays[]? | .DisplayDate as \$date | .Slots[]? | \"INSERT INTO appointments VALUES ('\(\$location)','\(\$date)','\(.StartTimeISO)');\"" >> queries.txt
 done
 
 sqlite3 appointments.db 'CREATE TABLE appointments (location TEXT, date TEXT, time TEXT);'
 cat queries.txt | sqlite3 appointments.db
 
-echo "# Available appointments:" > README.md
+echo "# Available appointments starting April 15:" > README.md
 echo '```' >> README.md
 sqlite3 -cmd '.width 32 0 0' -column appointments.db 'select location, date, count(*) as count from appointments group by 1, 2;' >> README.md
 echo '```' >> README.md
