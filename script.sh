@@ -37,6 +37,6 @@ cat queries.txt | sqlite3 appointments.db
 
 echo "Available appointments:"
 
-sqlite3 -cmd '.width 40 0 0' -column -header appointments.db 'select location, date, count(*) as count from appointments group by 1, 2;'
+sqlite3 -cmd '.width 40 0 0' -column -header appointments.db 'select location, date, count(*) as count from appointments group by 1, 2;' > README.md
 
 rm appointments.db queries.txt
