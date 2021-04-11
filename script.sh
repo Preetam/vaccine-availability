@@ -30,8 +30,11 @@ for i in "${!PARAMS[@]}"; do
   | jq -cr --arg location "${LOCATIONS[$i]}" ".AllDays[]? | .DisplayDate as \$date | .Slots[]? | \"INSERT INTO appointments VALUES ('\(\$location)','\(\$date)','\(.StartTimeISO)');\"" >> queries.txt
 done
 
+echo "# Available appointments starting April 15:" > README.md
+echo >> README.md
+
 if [ ! -s queries.txt ]; then
-  echo "No appointments starting on the 15th"
+  echo "No appointments available. Check back in a few hours." >> README.md
   exit 0
 fi
 
