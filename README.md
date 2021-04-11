@@ -1,4 +1,3 @@
 # Available appointments starting April 15:
-```
-Levis Stadium                     Thursday April 15, 2021  138       
-```
+
+No appointments available. Check back in a few hours.
