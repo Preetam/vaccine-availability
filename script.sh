@@ -55,7 +55,10 @@ curl -i -XPOST "$DISCORD_WEBHOOK" \
 -H "Content-Type: application/json" \
 -d "$PAYLOAD"
 
-curl -XPOST "https://api.github.com/repos/Preetam/vaccine-availability/issues" \
-  -H "Authorization: Bearer $GITHUB_TOKEN" \
-  -H "Content-Type: application/json" \
-  -d '{"title": "Vaccine appointments available", "body": "There are appointments available. Check the README!"}'
+
+### Not posting GH issues anymore because it'll be spammy.
+#
+# curl -XPOST "https://api.github.com/repos/Preetam/vaccine-availability/issues" \
+#   -H "Authorization: Bearer $GITHUB_TOKEN" \
+#   -H "Content-Type: application/json" \
+#   -d '{"title": "Vaccine appointments available", "body": "There are appointments available. Check the README!"}'
