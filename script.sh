@@ -55,6 +55,9 @@ curl -i -XPOST "$DISCORD_WEBHOOK" \
 -H "Content-Type: application/json" \
 -d "$PAYLOAD"
 
+curl -i -XPOST "$DISCORD_WEBHOOK2" \
+-H "Content-Type: application/json" \
+-d "$PAYLOAD"
 
 ### Not posting GH issues anymore because it'll be spammy.
 #
