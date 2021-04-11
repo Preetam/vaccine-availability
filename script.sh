@@ -35,6 +35,7 @@ echo >> README.md
 
 if [ ! -s queries.txt ]; then
   echo "No appointments available. Check back in a few hours." >> README.md
+  rm -f queries.txt
   exit 0
 fi
 
