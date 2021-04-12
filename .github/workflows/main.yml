@@ -29,6 +29,7 @@ jobs:
           COOKIE: ${{ secrets.COOKIE }}
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
           DISCORD_WEBHOOK_TWO: ${{ secrets.DISCORD_WEBHOOK_TWO }}
+          DISCORD_WEBHOOK_THREE: ${{ secrets.DISCORD_WEBHOOK_THREE }}
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
 
       - uses: EndBug/add-and-commit@v7
