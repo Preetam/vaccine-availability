@@ -47,24 +47,24 @@ cat queries.txt | sqlite3 appointments.db
 echo "Available appointments:" > README.md
 echo >> README.md
 
-sqlite3 -cmd '.separator "\n  "' appointments.db 'with data as (select "* [" || location || "](" || link || ")" as location, date, count(*) || " slots" as count from appointments group by 1, 2) select location, group_concat(date || " (" || count || ")", "\n") from data group by location;' >> README.md
+sqlite3 -cmd '.separator ", "' appointments.db 'with data as (select "* [" || location || "](" || link || ")" as location, date, count(*) || " slots" as count from appointments group by 1, 2) select location, group_concat(date || " (" || count || ")", "; ") from data group by location;' >> README.md
 
 rm -f appointments.db queries.txt
 
 MESSAGE=$(cat README.md)
 PAYLOAD=$(jq -n --arg content "$MESSAGE" '{embeds: [{"description": $content}]}')
 
-# curl -i -XPOST "$DISCORD_WEBHOOK" \
-# -H "Content-Type: application/json" \
-# -d "$PAYLOAD"
+curl -i -XPOST "$DISCORD_WEBHOOK" \
+-H "Content-Type: application/json" \
+-d "$PAYLOAD"
 
-# curl -i -XPOST "$DISCORD_WEBHOOK_TWO" \
-# -H "Content-Type: application/json" \
-# -d "$PAYLOAD"
+curl -i -XPOST "$DISCORD_WEBHOOK_TWO" \
+-H "Content-Type: application/json" \
+-d "$PAYLOAD"
 
-# curl -i -XPOST "$DISCORD_WEBHOOK_THREE" \
-# -H "Content-Type: application/json" \
-# -d "$PAYLOAD"
+curl -i -XPOST "$DISCORD_WEBHOOK_THREE" \
+-H "Content-Type: application/json" \
+-d "$PAYLOAD"
 
 ### Not posting GH issues anymore because it'll be spammy.
 #
