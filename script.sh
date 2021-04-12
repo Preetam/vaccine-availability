@@ -66,9 +66,10 @@ curl -i -XPOST "$DISCORD_WEBHOOK_THREE" \
 -H "Content-Type: application/json" \
 -d "$PAYLOAD"
 
-### Not posting GH issues anymore because it'll be spammy.
-#
-# curl -XPOST "https://api.github.com/repos/Preetam/vaccine-availability/issues" \
-#   -H "Authorization: Bearer $GITHUB_TOKEN" \
-#   -H "Content-Type: application/json" \
-#   -d '{"title": "Vaccine appointments available", "body": "There are appointments available. Check the README!"}'
+### Post an issue if there are appointments on the 15th.
+if matches_filter=$(cat README.md | grep "April 15"); then
+  curl -XPOST "https://api.github.com/repos/Preetam/vaccine-availability/issues" \
+    -H "Authorization: Bearer $GITHUB_TOKEN" \
+    -H "Content-Type: application/json" \
+    -d '{"title": "April 15 appointments available", "body": "There are appointments available on the 15th. Check the README!"}'
+fi
