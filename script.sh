@@ -42,7 +42,7 @@ fi
 sqlite3 appointments.db 'CREATE TABLE appointments (location TEXT, date TEXT, time TEXT);'
 cat queries.txt | sqlite3 appointments.db
 
-echo "# Available appointments starting April 15:" > README.md
+echo "# Available appointments:" > README.md
 echo '```' >> README.md
 sqlite3 -cmd '.width 32 0 0' -column appointments.db 'select location, date, count(*) as count from appointments group by 1, 2;' >> README.md
 echo '```' >> README.md
@@ -55,7 +55,7 @@ curl -i -XPOST "$DISCORD_WEBHOOK" \
 -H "Content-Type: application/json" \
 -d "$PAYLOAD"
 
-curl -i -XPOST "$DISCORD_WEBHOOK2" \
+curl -i -XPOST "$DISCORD_WEBHOOK_TWO" \
 -H "Content-Type: application/json" \
 -d "$PAYLOAD"
 
