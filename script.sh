@@ -54,17 +54,17 @@ rm -f appointments.db queries.txt
 MESSAGE=$(cat README.md)
 PAYLOAD=$(jq -n --arg content "$MESSAGE" '{embeds: [{"description": $content}]}')
 
-# curl -i -XPOST "$DISCORD_WEBHOOK" \
-# -H "Content-Type: application/json" \
-# -d "$PAYLOAD"
+curl -i -XPOST "$DISCORD_WEBHOOK" \
+-H "Content-Type: application/json" \
+-d "$PAYLOAD"
 
-# curl -i -XPOST "$DISCORD_WEBHOOK_TWO" \
-# -H "Content-Type: application/json" \
-# -d "$PAYLOAD"
+curl -i -XPOST "$DISCORD_WEBHOOK_TWO" \
+-H "Content-Type: application/json" \
+-d "$PAYLOAD"
 
-# curl -i -XPOST "$DISCORD_WEBHOOK_THREE" \
-# -H "Content-Type: application/json" \
-# -d "$PAYLOAD"
+curl -i -XPOST "$DISCORD_WEBHOOK_THREE" \
+-H "Content-Type: application/json" \
+-d "$PAYLOAD"
 
 ### Not posting GH issues anymore because it'll be spammy.
 #
