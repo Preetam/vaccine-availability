@@ -27,7 +27,9 @@ for i in "${!PARAMS[@]}"; do
   -H "__RequestVerificationToken: $TOKEN" \
   -H "Cookie: $COOKIE" \
   --data-raw "${PARAMS[$i]}&view=grouped" \
-  | jq -cr --arg location "${LOCATIONS[$i]}" ".AllDays[]? | .DisplayDate as \$date | .Slots[]? | \"INSERT INTO appointments VALUES ('\(\$location)','\(\$date)','\(.StartTimeISO)');\"" >> queries.txt
+  | jq -cr --arg location "${LOCATIONS[$i]}" \
+  --arg link "https://schedulecare.sccgov.org/mychartprd/SignupAndSchedule/EmbeddedSchedule?${PARAMS[$i]}" \
+  ".AllDays[]? | .DisplayDate as \$date | .Slots[]? | \"INSERT INTO appointments VALUES ('\(\$location)','\(\$link)','\(\$date)','\(.StartTimeISO)');\"" >> queries.txt
 done
 
 echo "# Available appointments:" > README.md
@@ -39,18 +41,18 @@ if [ ! -s queries.txt ]; then
   exit 0
 fi
 
-sqlite3 appointments.db 'CREATE TABLE appointments (location TEXT, date TEXT, time TEXT);'
+sqlite3 appointments.db 'CREATE TABLE appointments (location TEXT, link TEXT, date TEXT, time TEXT);'
 cat queries.txt | sqlite3 appointments.db
 
-echo "# Available appointments:" > README.md
-echo '```' >> README.md
-sqlite3 -cmd '.width 32 0 0' -column appointments.db 'select location, date, count(*) || " slots" as count from appointments group by 1, 2;' >> README.md
-echo '```' >> README.md
+echo "Available appointments:" > README.md
+echo >> README.md
+
+sqlite3 -cmd '.separator ", "' appointments.db 'select "* [" || location || "](" || link || ")", date, count(*) || " slots" as count from appointments group by 1, 2;' >> README.md
 
 rm -f appointments.db queries.txt
 
 MESSAGE=$(cat README.md)
-PAYLOAD=$(jq -n --arg content "$MESSAGE" '{content: $content}')
+PAYLOAD=$(jq -n --arg content "$MESSAGE" '{embeds: [{"description": $content}]}')
 curl -i -XPOST "$DISCORD_WEBHOOK" \
 -H "Content-Type: application/json" \
 -d "$PAYLOAD"
