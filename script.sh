@@ -26,11 +26,11 @@ for i in "${!PARAMS[@]}"; do
   curl -s 'https://schedulecare.sccgov.org/MyChartPRD/OpenScheduling/OpenScheduling/GetOpeningsForProvider?noCache=0.07578891619903505' \
   -H "__RequestVerificationToken: $TOKEN" \
   -H "Cookie: $COOKIE" \
-  --data-raw "${PARAMS[$i]}&view=grouped&start=2021-04-15" \
+  --data-raw "${PARAMS[$i]}&view=grouped" \
   | jq -cr --arg location "${LOCATIONS[$i]}" ".AllDays[]? | .DisplayDate as \$date | .Slots[]? | \"INSERT INTO appointments VALUES ('\(\$location)','\(\$date)','\(.StartTimeISO)');\"" >> queries.txt
 done
 
-echo "# Available appointments starting April 15:" > README.md
+echo "# Available appointments:" > README.md
 echo >> README.md
 
 if [ ! -s queries.txt ]; then
