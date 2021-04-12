@@ -47,7 +47,7 @@ cat queries.txt | sqlite3 appointments.db
 echo "Available appointments:" > README.md
 echo >> README.md
 
-sqlite3 -cmd '.separator ", "' appointments.db 'with data as (select "* [" || location || "](" || link || ")" as location, date, count(*) || " slots" as count from appointments group by 1, 2) select location, group_concat(date, "; "), cast(sum(count) as integer) from data group by location;' >> README.md
+sqlite3 -cmd '.separator ", "' appointments.db 'with data as (select "* [" || location || "](" || link || ")" as location, date, count(*) as count from appointments group by 1, 2) select location, group_concat(date, "; "), cast(sum(count) as integer) || " slots" from data group by location;' >> README.md
 
 rm -f appointments.db queries.txt
 
