@@ -1,3 +1,3 @@
-# Available appointments:
+Available appointments:
 
-No appointments available. Check back in a few hours.
+* [Valley Health Center Tully](https://schedulecare.sccgov.org/mychartprd/SignupAndSchedule/EmbeddedSchedule?id=132234&vt=1277&dept=101008002), Thursday April 15, 2021 (49 slots)
