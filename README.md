@@ -1,3 +1,3 @@
-# Available appointments:
+Available appointments:
 
-No appointments available. Check back in a few hours.
+* [Berger Auditorium](https://schedulecare.sccgov.org/mychartprd/SignupAndSchedule/EmbeddedSchedule?id=132694&vt=1277&dept=101064003), Thursday April 15, 2021 (35 slots)
