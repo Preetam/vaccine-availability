@@ -32,7 +32,7 @@ for i in "${!PARAMS[@]}"; do
   ".AllDays[]? | .DisplayDate as \$date | .Slots[]? | \"INSERT INTO appointments VALUES ('\(\$location)','\(\$link)','\(\$date)','\(.StartTimeISO)');\"" >> queries.txt
 done
 
-echo "# Available appointments:" > README.md
+echo "Available appointments:" > README.md
 echo >> README.md
 
 if [ ! -s queries.txt ]; then
