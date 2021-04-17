@@ -29,7 +29,7 @@ for i in "${!PARAMS[@]}"; do
   --data-raw "${PARAMS[$i]}&view=grouped" \
   | jq -cr --arg location "${LOCATIONS[$i]}" \
   --arg link "https://schedulecare.sccgov.org/mychartprd/SignupAndSchedule/EmbeddedSchedule?${PARAMS[$i]}" \
-  ".AllDays[]? | \"\(.DateISO) (\(.DisplayDate[0:3]))\" as \$date | .Slots[]? | \"INSERT INTO appointments VALUES ('\(\$location)','\(\$link)','\(\$date)','\(.StartTimeISO)');\"" >> queries.txt
+  ".AllDays[]? | \"\(.DateISO), \(.DisplayDate[0:3])\" as \$date | .Slots[]? | \"INSERT INTO appointments VALUES ('\(\$location)','\(\$link)','\(\$date)','\(.StartTimeISO)');\"" >> queries.txt
 done
 
 echo "Available appointments:" > README.md
