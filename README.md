@@ -1,6 +1,7 @@
 Available appointments:
 
-* [Berger Auditorium](https://schedulecare.sccgov.org/mychartprd/SignupAndSchedule/EmbeddedSchedule?id=132694&vt=1277&dept=101064003), Friday April 23, 2021 (85 slots); Monday April 19, 2021 (80 slots); Thursday April 22, 2021 (82 slots); Tuesday April 20, 2021 (75 slots); Wednesday April 21, 2021 (85 slots)
-* [Gilroy High School](https://schedulecare.sccgov.org/mychartprd/SignupAndSchedule/EmbeddedSchedule?id=132980&vt=1277&dept=101064008), Thursday April 22, 2021 (73 slots); Tuesday April 20, 2021 (16 slots); Wednesday April 21, 2021 (66 slots)
-* [Levis Stadium](https://schedulecare.sccgov.org/mychartprd/SignupAndSchedule/EmbeddedSchedule?id=132723&vt=1277&dept=101064004), Friday April 23, 2021 (54 slots); Sunday April 18, 2021 (23 slots); Thursday April 22, 2021 (49 slots); Tuesday April 20, 2021 (21 slots); Wednesday April 21, 2021 (11 slots)
-* [Valley Health Center East Valley](https://schedulecare.sccgov.org/mychartprd/SignupAndSchedule/EmbeddedSchedule?id=132268&vt=1277&dept=101064007), Monday April 19, 2021 (19 slots); Tuesday April 20, 2021 (79 slots)
+* [Berger Auditorium](https://schedulecare.sccgov.org/mychartprd/SignupAndSchedule/EmbeddedSchedule?id=132694&vt=1277&dept=101064003), 2021-04-19 (74 slots); 2021-04-20 (72 slots); 2021-04-21 (85 slots); 2021-04-22 (82 slots); 2021-04-23 (87 slots)
+* [Fairgrounds Expo Hall](https://schedulecare.sccgov.org/mychartprd/SignupAndSchedule/EmbeddedSchedule?id=132726&vt=1277&dept=101064002), 2021-04-22 (13 slots)
+* [Gilroy High School](https://schedulecare.sccgov.org/mychartprd/SignupAndSchedule/EmbeddedSchedule?id=132980&vt=1277&dept=101064008), 2021-04-20 (16 slots); 2021-04-21 (66 slots); 2021-04-22 (73 slots)
+* [Levis Stadium](https://schedulecare.sccgov.org/mychartprd/SignupAndSchedule/EmbeddedSchedule?id=132723&vt=1277&dept=101064004), 2021-04-21 (10 slots); 2021-04-22 (47 slots); 2021-04-23 (54 slots)
+* [Valley Health Center East Valley](https://schedulecare.sccgov.org/mychartprd/SignupAndSchedule/EmbeddedSchedule?id=132268&vt=1277&dept=101064007), 2021-04-19 (15 slots); 2021-04-20 (78 slots)
