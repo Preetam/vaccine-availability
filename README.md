@@ -7,4 +7,4 @@ Available appointments:
 * [Levis Stadium](https://schedulecare.sccgov.org/mychartprd/SignupAndSchedule/EmbeddedSchedule?id=132723&vt=1277&dept=101064004), 2021-05-11, Tue (108 slots); 2021-05-12, Wed (119 slots); 2021-05-13, Thu (120 slots)
 * [Mountain View Community Center](https://schedulecare.sccgov.org/mychartprd/SignupAndSchedule/EmbeddedSchedule?id=132472&vt=1277&dept=101064001), 2021-05-13, Thu (66 slots); 2021-05-14, Fri (62 slots)
 * [Valley Health Center East Valley](https://schedulecare.sccgov.org/mychartprd/SignupAndSchedule/EmbeddedSchedule?id=132268&vt=1277&dept=101064007), 2021-05-11, Tue (83 slots); 2021-05-12, Wed (84 slots); 2021-05-13, Thu (84 slots)
-* [Valley Specialty Center](https://schedulecare.sccgov.org/mychartprd/SignupAndSchedule/EmbeddedSchedule?id=132277&vt=1277&dept=101001072), 2021-05-11, Tue (44 slots); 2021-05-12, Wed (62 slots); 2021-05-13, Thu (66 slots)
+* [Valley Specialty Center](https://schedulecare.sccgov.org/mychartprd/SignupAndSchedule/EmbeddedSchedule?id=132277&vt=1277&dept=101001072), 2021-05-11, Tue (44 slots); 2021-05-12, Wed (61 slots); 2021-05-13, Thu (66 slots)
